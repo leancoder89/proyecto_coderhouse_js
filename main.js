@@ -132,7 +132,7 @@ if (isNaN(seleccionSede)) {
                             seleccionHora = "20:00 a 22:00 hs"
                             break;
                         default:
-                            alert("Lo lamento, elvalor elegido no es valido. Para volver a empezar seleccione F5")
+                            alert("Lo lamento, el valor elegido no es valido. Para volver a empezar seleccione F5")
                             break;
                     };
                     claseAgendada()
@@ -140,9 +140,10 @@ if (isNaN(seleccionSede)) {
             }
         };
 
-        if (seleccionSede >= 4) { error() }
+        if (seleccionSede >= 5) { error() }
         else if (seleccionActividad >= 4) { error() }
         else if (seleccionDia >= 7) { error() }
-        else if (seleccionHora >= 7) { error() }
+        else if (seleccionHora >= 8) { error() }
     }
 };
+
