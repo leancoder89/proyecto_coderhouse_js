@@ -1,10 +1,10 @@
-let nombreDeportista = prompt("Ingrese su nombre");
+let nombreDeportista = prompt("Ingresa tu nombre");
 
-let apellidoDeportista = prompt("Ingrese su apellido");
+let apellidoDeportista = prompt("Ingresa tu apellido");
 
-let seleccionSede = parseInt(prompt("Bienvenido a THEEDGEFITNESS " + nombreDeportista + " " + apellidoDeportista + " selecciona una sede :\n\n1. theedgefitnes CENTRO\n2. theedgefitness NORTE\n3. theedgefitness SUR\n4. theedgefitness SHOPPING DEL SIGLO\n\nSeleccione usando el numero de lista"));
+let seleccionSede = parseInt(prompt("Bienvenido a THEEDGEFITNESS " + nombreDeportista + " " + apellidoDeportista + " selecciona una sede :\n\n1. theedgefitnes CENTRO\n2. theedgefitness NORTE\n3. theedgefitness SUR\n4. theedgefitness SHOPPING DEL SIGLO\n\nSelecciona usando el numero de lista que corresponda"));
 
-let seleccionActividad = parseInt(prompt(" Selecciona una Actividad :\n\n1. GIMNASIO (musculacion)\n2. CROSSFIT\n3. NATACION\n\nSeleccione usando el numero de lista"));
+let seleccionActividad = parseInt(prompt(" Selecciona una actividad :\n\n1. GIMNASIO (musculacion)\n2. CROSSFIT\n3. NATACION\n\nSelecciona usando el numero de lista que corresponda"));
 
 let seleccionDia
 
