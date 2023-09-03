@@ -1,10 +1,22 @@
+let credencialesValidas = false;
+do {
+    let usuario = prompt("ingrese su usuario");
+    let password = prompt("ingrese su contraseña")
+    if (usuario === "Sandman" && password === "coderhouse") {
+        credencialesValidas = true
+    } else {
+        alert("credenciales invalidas")
+    }
+} while (!credencialesValidas)
+alert("Bienvenido")
+
 let nombreDeportista = prompt("Ingresa tu nombre");
 
 let apellidoDeportista = prompt("Ingresa tu apellido");
 
 let seleccionSede = parseInt(prompt("Bienvenido a THEEDGEFITNESS " + nombreDeportista + " " + apellidoDeportista + " selecciona una sede :\n\n1. theedgefitnes CENTRO\n2. theedgefitness NORTE\n3. theedgefitness SUR\n4. theedgefitness SHOPPING DEL SIGLO\n\nSelecciona usando el numero de lista que corresponda"));
 
-let seleccionActividad = parseInt(prompt(" Selecciona una actividad :\n\n1. GIMNASIO (musculacion)\n2. CROSSFIT\n3. NATACION\n\nSelecciona usando el numero de lista que corresponda"));
+let seleccionActividad
 
 let seleccionDia
 
@@ -24,15 +36,19 @@ if (isNaN(seleccionSede)) {
         switch (seleccionSede) {
             case 1:
                 seleccionSede = "theedgefitnes CENTRO"
+                seleccionActividad = parseInt(prompt(" Selecciona una actividad :\n\n1. GIMNASIO (musculacion)\n2. CROSSFIT\n3. NATACION\n\nSelecciona usando el numero de lista que corresponda"));
                 break;
             case 2:
                 seleccionSede = "theedgefitness NORTE"
+                seleccionActividad = parseInt(prompt(" Selecciona una actividad :\n\n1. GIMNASIO (musculacion)\n2. CROSSFIT\n3. NATACION\n\nSelecciona usando el numero de lista que corresponda"));
                 break;
             case 3:
                 seleccionSede = "theedgefitness SUR"
+                seleccionActividad = parseInt(prompt(" Selecciona una actividad :\n\n1. GIMNASIO (musculacion)\n2. CROSSFIT\n3. NATACION\n\nSelecciona usando el numero de lista que corresponda"));
                 break;
             case 4:
                 seleccionSede = "theedgefitness SHOPPING DEL SIGLO"
+                seleccionActividad = parseInt(prompt(" Selecciona una actividad :\n\n1. GIMNASIO (musculacion)\n2. CROSSFIT\n3. NATACION\n\nSelecciona usando el numero de lista que corresponda"));
                 break;
             default:
                 alert("Lo lament, el valor elegido no es valido. Para volver a empezar seleccione F5");
@@ -142,7 +158,7 @@ if (isNaN(seleccionSede)) {
 
         if (seleccionSede >= 5) { error() }
         else if (seleccionActividad >= 4) { error() }
-        else if (seleccionDia >= 7) { error() }
+        else if (seleccionDia = 7) { error() }
         else if (seleccionHora >= 8) { error() }
     }
 };
