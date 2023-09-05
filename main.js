@@ -1,14 +1,14 @@
-// let credencialesValidas = false;
-// do {
-//     let usuario = prompt("ingrese su usuario");
-//     let password = prompt("ingrese su contraseña")
-//     if (usuario === "Sandman" && password === "coderhouse") {
-//         credencialesValidas = true
-//     } else {
-//         alert("credenciales invalidas")
-//     }
-// } while (!credencialesValidas)
-// alert("Bienvenido a THEEDGEFITNESS")
+let credencialesValidas = false;
+do {
+    let usuario = prompt("ingrese su usuario");
+    let password = prompt("ingrese su contraseña")
+    if (usuario === "Sandman" && password === "coderhouse") {
+        credencialesValidas = true
+    } else {
+        alert("credenciales invalidas")
+    }
+} while (!credencialesValidas)
+alert("Bienvenido a THEEDGEFITNESS")
 
 let nombreDeportista = prompt("Ingresa tu nombre").toUpperCase();
 let apellidoDeportista = prompt("Ingresa tu apellido").toUpperCase();
