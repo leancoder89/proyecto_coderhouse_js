@@ -15,22 +15,22 @@ let apellidoDeportista = prompt("Ingresa tu apellido").toUpperCase();
 
 const dias = [
     {
-        dia: "Lunes",
+        dia: "LUNES",
     },
     {
-        dia: "Martes",
+        dia: "MARTES",
     },
     {
-        dia: "Miércoles",
+        dia: "MIERCOLES",
     },
     {
-        dia: "Jueves",
+        dia: "JUEVES",
     },
     {
-        dia: "Viernes",
+        dia: "VIERNES",
     },
     {
-        dia: "Sábado",
+        dia: "SABADO",
     },
 ];
 
@@ -132,10 +132,10 @@ const Entrenador = entrenadorFiltrado.Entrenador;
 switch (seleccionDia) {
     case "LUNES":
     case "MARTES":
-    case "MIÉRCOLES":
+    case "MIERCOLES":
     case "JUEVES":
     case "VIERNES":
-    case "SÁBADO":
+    case "SABADO":
         seleccionHora = prompt(actividadDia(listaHorarios)).toUpperCase();
         break;
     default:
@@ -145,7 +145,7 @@ switch (seleccionDia) {
         break;
 }
 
-const errorHorario = horarios.some((hora) => hora.hora === seleccionHora);
+const errorHorario = horarios.some(incluye => incluye.hora.includes(seleccionHora));
 
 if (errorHorario) {
     claseAgendada();
