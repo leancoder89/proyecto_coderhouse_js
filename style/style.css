@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: montserrat, serif;
+}
+
+body {
+    background-image: url(../multimedia/theedgefitness.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: contain;
+}
+a{
+    text-decoration: none;
+}
+
+.header {
+    background-color: rgb(31, 22, 22);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.color__black{
+    background-color: black;
+}
+
+.color__red{
+    color: red;
+}
+.color__white{
+    color: white;
+}
+.header__titles {
+    background-color: rgb(31, 22, 22);
+    display: flex;
+    flex-direction: column;
+    margin-left: center;
+    align-items: center;
+    margin-bottom: -5vh;
+}
+
+/* span{
+    background-color: rgb(31, 22, 22);
+} */
+.header__h2 {
+    color: white;
+     text-align: center;
+    font-size: 2rem;
+}
+
+.separador {
+    /* background-color: rgb(31, 22, 22); */
+    padding: 2vh;
+}
+
+@media (max-width: 1024px) {
+    .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header__titles {
+        margin-bottom: 0;
+    }
+
+    .header__h2 {
+        font-size: 6vw;
+        text-align: center;
+    }
+}
+
+.formu1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 3vh;
+}
+
+.formu1__caja {
+    width: 95%;
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px;
+    border: solid rgb(119, 119, 119) 2px;
+    border-radius: 2vw;
+    background: rgba(255, 255, 255, 0.45);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.225);
+}
+
+.formu1__datos {
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;
+    gap: 6vh;
+    padding: 2vh;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.formu1__ingreso {
+    display: flex;
+    padding: 2vh;
+    width: 100%;
+    justify-content: center;
+    gap: 7%;
+    flex-wrap: wrap;
+}
+
+.formu1__submit {
+    font-size: 2rem;
+}
+
+.formu1__reset {
+    font-size: 1.5rem;
+}
+
+.lista {
+    display: none;
+    justify-content: space-evenly;
+    font-weight: bold;
+}
+
+.lista__Actividad {
+    margin: 3.5vh;
+    padding: 5vh;
+    list-style: none;
+    box-shadow: 3px 3px 10px;
+    border: solid rgb(119, 119, 119) 2px;
+    border-radius: 2vw;
+    background: rgba(255, 255, 255, 0.45);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.225);
+}
+
+.lista__Dias {
+    margin: 3.5vh;
+    padding: 5vh;
+    box-shadow: 3px 3px 10px;
+    border: solid rgb(119, 119, 119) 2px;
+    border-radius: 2vw;
+    background: rgba(255, 255, 255, 0.45);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.225);
+}
+
+.lista__Horarios {
+    margin: 3.5vh;
+    padding: 5vh;
+    box-shadow: 3px 3px 10px;
+    border: solid rgb(119, 119, 119) 2px;
+    border-radius: 2vw;
+    background: rgba(255, 255, 255, 0.45);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.225);
+}
+
+.final {
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    flex-wrap: wrap;
+    margin: 8vh;
+}
+
+.final__clase {
+    font-size: 4rem;
+    padding: 3vh;
+    flex-wrap: wrap;
+    margin: 3.5vh;
+    width: 70%;
+    height: fit-content;
+    border: black solid;
+    box-shadow: 3px 3px 10px;
+    border: solid rgb(119, 119, 119) 2px;
+    border-radius: 2vw;
+    background-color: rgb(81, 81, 82);
+    color: rgb(255, 255, 255);
+    flex-wrap: wrap;
+    background: rgba(16, 16, 16, 0.55);
+    -webkit-backdrop-filter: blur(11px);
+    backdrop-filter: blur(11px);
+    border: 1px solid rgba(16, 16, 16, 0.275);
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .lista {
+        flex-direction: column;
+    }
+
+    .final__clase {
+        margin: 0;
+        font-size: 1.5rem;
+        margin: 0.5ch;
+        width: 95%;
+    }
+}
+
+/*# sourceMappingURL=style.css.map */
