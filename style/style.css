@@ -11,7 +11,8 @@ body {
     background-repeat: no-repeat;
     object-fit: contain;
 }
-a{
+
+a {
     text-decoration: none;
 }
 
@@ -21,16 +22,19 @@ a{
     align-items: center;
     flex-wrap: wrap;
 }
-.color__black{
+
+.color__black {
     background-color: black;
 }
 
-.color__red{
+.color__red {
     color: red;
 }
-.color__white{
+
+.color__white {
     color: white;
 }
+
 .header__titles {
     background-color: rgb(31, 22, 22);
     display: flex;
@@ -40,17 +44,13 @@ a{
     margin-bottom: -5vh;
 }
 
-/* span{
-    background-color: rgb(31, 22, 22);
-} */
 .header__h2 {
     color: white;
-     text-align: center;
+    text-align: center;
     font-size: 2rem;
 }
 
 .separador {
-    /* background-color: rgb(31, 22, 22); */
     padding: 2vh;
 }
 
@@ -201,5 +201,3 @@ a{
         width: 95%;
     }
 }
-
-/*# sourceMappingURL=style.css.map */

@@ -258,7 +258,7 @@ function mostrarClasesAgendadas() {
     } else {
         claseAgendada.forEach(function (clase, index) {
             let liClase = document.createElement("li");
-            liClase.textContent = `Clase para ${clase.deportista}: ${clase.actividad} el día ${clase.dia} a las ${clase.hora}hs`;
+            liClase.textContent = ` ${clase.deportista}: Tu clase de ${clase.actividad} quedo agendada el día ${clase.dia} a las ${clase.hora}hs`;
 
             let btnEliminar = document.createElement("button");
             btnEliminar.textContent = "Eliminar";
