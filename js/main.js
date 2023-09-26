@@ -29,12 +29,24 @@ const entrenadores = [
         Actividad: "CROSSFIT",
     },
 ];
+const mensajeDiv = document.getElementById('mensaje');
+let nombreDeportista;
+let apellidoDeportista;
 
 let formulario = document.getElementById("datosDeportista");
-
+let listaClasesDiv = document.getElementById('listaClases');
 let actividadSeleccionada;
 let diaSeleccionado;
 let horaSeleccionada;
+
+
+function mostrarMensaje(mensaje) {
+    mensajeDiv.textContent = mensaje;
+}
+
+function limpiarMensaje() {
+    mensajeDiv.textContent = '';
+}
 
 formulario.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -54,7 +66,6 @@ function agregarDeportista(nombre, apellido) {
         apellido,
     };
     arrayDeportista.push(deportista1);
-    claseAgendada.push(deportista1);
     mostrarActividades();
 
     let displayLista = document.getElementById("lista");
@@ -62,7 +73,7 @@ function agregarDeportista(nombre, apellido) {
 }
 
 function mostrarActividades() {
-    if (arrayDeportista.length > 0 && claseAgendada.length > 0) {
+    if (arrayDeportista.length > 0) {
         let ulActividad = document.getElementById("listaActividad");
         let spanActividad = document.getElementById("spanActividad");
 
@@ -73,20 +84,18 @@ function mostrarActividades() {
             selectActividad.type = "radio";
             selectActividad.id = `actividad` + index;
             selectActividad.name = "actividad";
-            selectActividad.value = `${actividad}`;
+            selectActividad.value = actividad;
 
             let label = document.createElement("label");
-            label.setAttribute("for", "actividad" + index);
             label.textContent = actividad;
+            label.setAttribute("for", `actividad${index}`);
 
             ulActividad.appendChild(selectActividad);
             ulActividad.appendChild(label);
             ulActividad.appendChild(document.createElement("br"));
         });
 
-        let seleccion1 = document.querySelectorAll(
-            'input[type="radio"][name="actividad"]'
-        );
+        let seleccion1 = document.querySelectorAll('input[type="radio"][name="actividad"]');
 
         seleccion1.forEach(function (radio) {
             radio.addEventListener("change", function () {
@@ -96,6 +105,7 @@ function mostrarActividades() {
                 agregarActividad(actividadSeleccionada);
             });
         });
+
         let displayForm = document.getElementById("datosDeportista");
         displayForm.style.display = "none";
     }
@@ -111,31 +121,28 @@ function agregarActividad(actividadSeleccionada) {
 }
 
 function seleccionDia() {
-    if (actividadSeleccionada != undefined) {
+    if (actividadSeleccionada) {
         let ulDia = document.getElementById("listaDias");
-
         let spanDia = document.getElementById("spanDia");
-        spanDia.innerHTML = `Por favor seleccione un Dia disponible para realizar <strong>${actividadSeleccionada}</strong> <br><br>`;
+        spanDia.innerHTML = `Por favor seleccione un Día disponible para realizar <strong>${actividadSeleccionada}</strong><br><br>`;
 
         dias.forEach(function (dia, index) {
             let selectDia = document.createElement("input");
             selectDia.type = "radio";
             selectDia.name = "dias";
-            selectDia.id = "dias" + index;
-            selectDia.value = `${dia}`;
+            selectDia.id = `dias${index}`;
+            selectDia.value = dia;
 
             let label = document.createElement("label");
-            label.setAttribute("for", "dias" + index);
             label.textContent = dia;
+            label.setAttribute("for", `dias${index}`);
 
             ulDia.appendChild(selectDia);
             ulDia.appendChild(label);
             ulDia.appendChild(document.createElement("br"));
         });
 
-        let seleccion2 = document.querySelectorAll(
-            'input[type="radio"][name="dias"]'
-        );
+        let seleccion2 = document.querySelectorAll('input[type="radio"][name="dias"]');
 
         seleccion2.forEach(function (radio) {
             radio.addEventListener("change", function () {
@@ -145,6 +152,7 @@ function seleccionDia() {
                 agregarDia(diaSeleccionado);
             });
         });
+
         let displayActividad = document.getElementById("listaActividad");
         displayActividad.style.display = "none";
     }
@@ -161,31 +169,28 @@ function agregarDia(diaSeleccionado) {
 }
 
 function seleccionHora() {
-    if (diaSeleccionado != undefined) {
+    if (diaSeleccionado) {
         let ulHora = document.getElementById("listaHorarios");
-
         let spanHora = document.getElementById("spanHora");
-        spanHora.innerHTML = `Por favor seleccione un Horario disponible para su clase del dia <strong>${diaSeleccionado}</strong> en <strong>${actividadSeleccionada}</strong> <br><br>`;
+        spanHora.innerHTML = `Por favor seleccione un Horario disponible para su clase del día <strong>${diaSeleccionado}</strong> en <strong>${actividadSeleccionada}</strong><br><br>`;
 
         horarios.forEach(function (hora, index) {
             let selectHora = document.createElement("input");
             selectHora.type = "radio";
             selectHora.name = "hora";
-            selectHora.id = "horas" + index;
-            selectHora.value = `${hora}`;
+            selectHora.id = `horas${index}`;
+            selectHora.value = hora;
 
             let label = document.createElement("label");
-            label.setAttribute("for", "horas" + index);
             label.textContent = hora;
+            label.setAttribute("for", `horas${index}`);
 
             ulHora.appendChild(selectHora);
             ulHora.appendChild(label);
             ulHora.appendChild(document.createElement("br"));
         });
 
-        let seleccion3 = document.querySelectorAll(
-            'input[type="radio"][name="hora"]'
-        );
+        let seleccion3 = document.querySelectorAll('input[type="radio"][name="hora"]');
 
         seleccion3.forEach(function (radio) {
             radio.addEventListener("change", function () {
@@ -195,6 +200,7 @@ function seleccionHora() {
                 agregarHora(horaSeleccionada);
             });
         });
+
         let displayDias = document.getElementById("listaDias");
         displayDias.style.display = "none";
     }
@@ -216,29 +222,22 @@ function agregarHora(horaSeleccionada) {
 
 function claseFinal() {
     if (sessionStorage.getItem("claseStoreado")) {
+        // let claseRecuperada = JSON.parse(sessionStorage.getItem("claseStoreado"));
+        let entrenadorFiltrado = entrenadores.filter(entrenador => entrenador.Actividad === actividadSeleccionada);
 
-        let claseRecuperado = JSON.parse(sessionStorage.getItem("claseStoreado"))
-        let entrenadorFiltrado = entrenadores.filter(
-            (entrenadores) => entrenadores.Actividad === actividadSeleccionada
-        );
-
-        let entrenador = entrenadorFiltrado.map((entrenadores) => entrenadores.Entrenador);
+        let entrenador = entrenadorFiltrado.map(entrenador => entrenador.Entrenador);
 
         let textoFinal = document.getElementById("clase");
-        textoFinal.innerHTML = `${nombreDeportista.toUpperCase()} ${apellidoDeportista.toUpperCase()}, su clase quedo agendada con: ${entrenador} de ${actividadSeleccionada} el dia ${diaSeleccionado} a las ${horaSeleccionada}hs.`;
+        textoFinal.innerHTML = `${nombreDeportista.toUpperCase()} ${apellidoDeportista.toUpperCase()}, tu clase quedó agendada con: ${entrenador} de ${actividadSeleccionada} el día ${diaSeleccionado} a las ${horaSeleccionada}hs.`;
 
         let displayHoras = document.getElementById("listaHorarios");
         displayHoras.style.display = "none";
     } else {
-        window.location.href = "../index.html"
+        window.location.href = "../index.html";
     }
 }
 
-// Función para eliminar una clase
-function eliminarClase(index) {
-    claseAgendada.splice(index, 1); // Eliminar la clase del arreglo
-    actualizarListaClases(); // Actualizar la lista de clases agendadas
-}
+
 
 // Agregar un evento de click al botón "Consultar clases agendadas"
 let btnConsultarClases = document.getElementById("btnConsultarClases");
@@ -248,26 +247,37 @@ btnConsultarClases.addEventListener("click", function () {
 
 // Función para mostrar las clases agendadas
 function mostrarClasesAgendadas() {
-    let ulListaClases = document.getElementById("listaClases");
-    ulListaClases.innerHTML = ""; // Limpiar la lista
+    let listaClases = document.getElementById("listaClases");
+    listaClases.innerHTML = ""; // Limpiar la lista
 
     if (claseAgendada.length === 0) {
         let mensajeNoClases = document.createElement("li");
         mensajeNoClases.textContent = "No tienes clases agendadas.";
-        ulListaClases.appendChild(mensajeNoClases);
+        listaClases.appendChild(mensajeNoClases);
     } else {
-        claseAgendada.forEach(function (clase, index) {
+        claseAgendada.forEach((clase, index) => {
             let liClase = document.createElement("li");
-            liClase.textContent = ` ${clase.deportista}: Tu clase de ${clase.actividad} quedo agendada el día ${clase.dia} a las ${clase.hora}hs`;
+            liClase.textContent = ` ${clase.deportista}: Tu clase de ${clase.actividad} quedó agendada el día ${clase.dia} a las ${clase.hora}hs`;
 
             let btnEliminar = document.createElement("button");
             btnEliminar.textContent = "Eliminar";
-            btnEliminar.addEventListener("click", function () {
+            btnEliminar.addEventListener("click", () => {
                 eliminarClase(index);
             });
 
             liClase.appendChild(btnEliminar);
-            ulListaClases.appendChild(liClase);
+            listaClases.appendChild(liClase);
         });
+
+        listaClasesDiv.style.display = 'block'; 
     }
 }
+
+// Función para eliminar una clase
+function eliminarClase(index) {
+    claseAgendada.splice(index, 1); // Eliminar la clase del arreglo
+    mostrarClasesAgendadas(); // Actualizar la lista de clases agendadas
+    mostrarMensaje("Turno eliminado.");
+}
+
+
