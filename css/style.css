@@ -1,7 +1,7 @@
 body {
-    background-image: url("../img/fondo-colorido-forma-triangulo_889431-29.avif");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url("../img/fondo.jpg");
+    background-repeat: repeat;
+    background-size: contain;
     font-size: 40px;
     min-height: 100vh;
     position: relative;
@@ -11,6 +11,7 @@ body {
 a {
     text-decoration: none;
 }
+
 .main {
     height: 80%;
 }
@@ -37,7 +38,7 @@ h1,
 h2,
 p,
 h3 {
-    color:black;
+    color: black;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 1em;
     display: flex;
@@ -65,7 +66,7 @@ button {
     border-radius: 7%;
 }
 
-.cards,
+.tarjetas,
 .profesores,
 .formulario,
 .profesores1 {
@@ -85,8 +86,8 @@ button {
     padding-bottom: 2px;
 }
 
-.cards {
-    
+.tarjetas {
+
     margin: 5px 5px;
     padding: 5px;
     border: black 2px solid;
@@ -96,7 +97,7 @@ button {
     -webkit-box-shadow: 2px 5px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 2px 5px 5px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 2px 5px 5px 0px rgba(0, 0, 0, 0.75);
-    
+
 }
 
 .profesores1,
@@ -114,7 +115,7 @@ button {
     -moz-box-shadow: 2px 5px 5px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 2px 5px 5px 0px rgba(0, 0, 0, 0.75);
     flex-wrap: wrap;
-    
+
 }
 
 
@@ -144,8 +145,8 @@ button {
 }
 
 .fotosProfesores {
-    width: 50%;
-    height: 50%;
+    width: 20vw;
+    height: 30vh;
 }
 
 .fotosProfesores1 {

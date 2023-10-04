@@ -1,4 +1,4 @@
-//comienzo definiendo funciones asíncronas para traer a partir del json los datos de los profesionales
+//comienzo definiendo funciones asíncronas para traer a partir del json los datos de los profesores
 
 async function traerProfesores() {
     const response = await fetch("../staff.json");
@@ -14,13 +14,12 @@ async function obtenerDatos() {
         profesores.addEventListener("click", () => {
             datos.forEach((profesor) => {
                 let div = document.createElement("div");
-                div.className = "cards";
+                div.className = "tarjetas";
                 div.innerHTML = `
                 <img class="fotosProfesores" src="${profesor.imagen}">
-                <h2>Clase de ${profesor.clase}</h2>
-                <p>${profesor.nombre}</p>
-                <p>$${profesor.honorarios}</p>
-            `;
+                <h2>${profesor.nombre}</h2>
+                <p>Clase de ${profesor.clase}</p>
+                `;
                 contenedorProfesores.appendChild(div);
             })
             document.getElementById("agendarClase").disabled = false;

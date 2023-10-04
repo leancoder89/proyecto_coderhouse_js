@@ -9,7 +9,7 @@ let dni;
 let telefono;
 let staffProfesores;
 
-//inserto los datos de los profesionales en el formulario que voy a utilizar para que el deportista agendela clase
+//inserto los datos de los profesores en el formulario que voy a utilizar para que el deportista agende la clase
 
 async function modificarFormulario() {
     const datos= await traerProfesores();
