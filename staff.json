@@ -3,7 +3,7 @@
         "id": 1,
         "nombre": "Profesora Jen Smith",
         "clase": "CROSSFIT",
-        "imagen": "../img/jen-smith.jpg",
+        "imagen": "./img/jen-smith.jpg",
         "fecha": "",
         "hora": ""
     },
@@ -11,7 +11,7 @@
         "id": 2,
         "nombre": "Profesor Michael Phelps",
         "clase": "NATACION",
-        "imagen": "../img/michael-phelps.jpg",
+        "imagen": "./img/michael-phelps.jpg",
         "fecha": "",
         "hora": ""
     },
@@ -19,7 +19,7 @@
         "id": 3,
         "nombre": "Profesor Rocky Balboa",
         "clase": "GIMNASIO",
-        "imagen": "../img/rocky-balboa.jpg",
+        "imagen": "./img/rocky-balboa.jpg",
         "fecha": "",
         "hora": ""
     }
