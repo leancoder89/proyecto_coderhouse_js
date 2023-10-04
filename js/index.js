@@ -1,7 +1,7 @@
 //comienzo definiendo funciones asíncronas para traer a partir del json los datos de los profesionales
 
 async function traerProfesores() {
-    const response = await fetch("/staff.json");
+    const response = await fetch("../staff.json");
     const data = await response.json();
     return data;
 }

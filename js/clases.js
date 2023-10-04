@@ -126,7 +126,7 @@ eliminarClases();
 let agregarClase=document.getElementById("agregarClase");
 agregarClase.addEventListener("click", ()=>{
     setTimeout(function () {
-        window.location.href = "/pages/reservar-clase.html";
+        window.location.href = "../pages/reservar-clase.html";
     }, 1000);
 });
 

@@ -71,7 +71,7 @@ formulario.addEventListener("submit", (e)=>{
             timer: 1000
         });
         setTimeout(()=> {
-            window.location.href = "/pages/clases.html";
+            window.location.href = "../pages/clases.html";
         }, 1500);
     } else {
         Swal.fire({
