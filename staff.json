@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "nombre": "Profesora Jen Smith",
+        "honorarios": 2000,
+        "clase": "CROSSFIR",
+        "imagen": "/img/jen-smith.jpg",
+        "fecha": "",
+        "hora": ""
+    },
+    {
+        "id": 2,
+        "nombre": "Profesor Michael Phelps",
+        "honorarios": 2000,
+        "clase": "NATACION",
+        "imagen": "/img/michael-phelps.jpg",
+        "fecha": "",
+        "hora": ""
+    },
+    {
+        "id": 3,
+        "nombre": "Profesor Rocky Balboa",
+        "honorarios": 2000,
+        "clase": "GIMNASIO",
+        "imagen": "/img/rocky-balboa.jpg",
+        "fecha": "",
+        "hora": ""
+    }
+]

@@ -1,89 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Carletti Leandro">
-    <meta name="description" content="Gestor de Clases para actividades fisicas theedgefitness.">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
-<link rel="stylesheet" href="style/style.css">
-    <title>THEEDGEFITNESS - Agenda de clases</title>
+    <title>Reserva de clases para actividades fisicas - Proyecto final JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
     <header>
-        <div class="header">
-            <a href="index.html">
-                <h1 class="color__red">THEEDGE<strong class="color__white">FITNESS</strong></h1>
-            </a>
-        </div>
-        <div class="header__titles">
-            <h2 class="header__h2">Bienvenidx - Agenda tu clase</h2>
-        </div>
-        <div class="separador" id="separador"><span id="spanSeparador" class="separador__span"></span></div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a href="index.html">
+                    <h1 class="color__red">THEEDGE<strong class="color__white">FITNESS</strong></h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./pages/reservar-clase.html">Reservar Clase</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./pages/ingresar.html">Ingresar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" tabindex="-1"><button id="profesores"> Ver Profesores</button></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./pages/reservar-clase.html"><button disabled="disabled" id="sacarTurno">Solicitar Clase</button></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./pages/clases.html"><img class="clases"
+                                    src="./img/calendario.jpg" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
-
-    <form action="" id="datosDeportista" class="formu1">
-        <div class="formu1__caja">
-            <div class="formu1__datos">
-                <div class="form-floating mb-9">
-                    <input type="text" class="form-control" id="nombre" placeholder="nombre" required>
-                    <label for="nombre">Nombre</label>
+    <main>
+        <!-- <h1>Bienvenidx a THEEDGEFITNESS!!!</h1> -->
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./img/nadador.jpg" class="d-block diapo" alt="...">
                 </div>
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="apellido" placeholder="Apellido" required>
-                    <label for="apellido">Apellido</label>
+                <div class="carousel-item">
+                    <img src="./img/theedgefitness.jpg" class="d-block diapo" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/crossfit-soga.jpg" class="d-block diapo" alt="...">
                 </div>
             </div>
-            <div class="formu1__ingreso">
-                <input type="submit" value="Continuar" class="formu1__submit btn btn-success">
-                <input type="reset" value="Borrar Datos" class="formu1__reset btn btn-secondary">
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-    </form>
-    <div class="lista1" id="lista1">
-        <div class="lista1__Actividad">
-            <span id="spanActividad" class="listaActividad__titulo"></span>
-            <ul id="listaActividad">
-            </ul>
+        <div id="contenedorProfesores" class="contenedorProfesores"></div>
+    </main>
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+            <span class="mb-3 mb-md-0 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><strong> © 2023 Leandro Carletti</strong></font></font></span>
         </div>
-    </div>
-    <div class="cajaLoader" id="cajaLoader"><span id="loader" class="loader cajaLoader__interior"></span></div>
-
-
-    <div class="calendarBox" id="calendarBox">
-        <span class="calendarBox__cont" id="calCont">
-            <h2>Seleccione un dia de preferencia</h2>
-            <div id="calendar" class="calendarBox__calendar"></div>
-        </span>
-    </div>
-
-        <div class="lista2" id="lista2">
-            <div class="lista2__Horarios">
-                <span id="spanHora" class="listaHorarios__titulo"></span>
-                <ul id="listaHorarios" class="lista2__horas">
-                </ul>
-            </div>
-        </div>
-    <div class="final" id="claseFinal">
-        <h2 id="clase" class="final__clase"></h2>
-        <span id="botones" class="final__botones"></span>
-    </div>
-    
-    <div id="clasesAgendadas" class="clasesAgendadas"></div>
-
-    <script src="js/calendar.js"></script>
-    <script src="js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-
+    </footer>
+    <script src="./js/index.js" type="module"></script>
+    <script type="module" src="./js/formulario.js"></script>
+    <script type="module" src="./js/clases.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
 </body>
-
 </html>
