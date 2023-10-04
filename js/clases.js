@@ -14,7 +14,7 @@ function mostrarClasesAgendadas(agenda) {
         let claseAgendada = document.createElement("div");
         claseAgendada.className = "profesores1"
         claseAgendada.innerHTML = `
-        <img class="fotosProfesores1" src="..${item.imagen}">
+        <img class="fotosProfesores1" src=".${item.imagen}">
         <h3>Actividad de ${item.clase}</h3>
         <p class="p">${item.nombre}</p>
         <p class="p">Fecha: ${item.fecha}</p>
