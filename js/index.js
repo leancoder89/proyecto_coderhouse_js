@@ -9,9 +9,10 @@ async function traerProfesores() {
 async function obtenerDatos() {
     const datos = await traerProfesores();
     let contenedorProfesores = document.getElementById("contenedorProfesores");
-    if (datos){
+    if (datos) {
         let profesores = document.getElementById("profesores");
         profesores.addEventListener("click", () => {
+            contenedorProfesores.innerHTML = ""
             datos.forEach((profesor) => {
                 let div = document.createElement("div");
                 div.className = "tarjetas";
@@ -22,18 +23,13 @@ async function obtenerDatos() {
                 `;
                 contenedorProfesores.appendChild(div);
             })
-            document.getElementById("agendarClase").disabled = false;
-            function redirigir(){
-                location.href='#contenedorProfesores'
-            }
-            redirigir();
         })
     }
 }
 
 obtenerDatos();
 //exporto la funcion asíncrona, ya que necesito los datos de los profesores para seguir trabajando en los otros archivos
-export {traerProfesores};
+export { traerProfesores };
 
 
 
